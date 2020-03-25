@@ -1,0 +1,412 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  color: #363636;
+}
+
+.container {
+  min-height: 50vh;
+  max-width: 80em;
+  margin: auto;
+  padding: 5em 1em;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  margin: 1rem 0;
+}
+
+h1:after {
+  content: '.';
+  color: #D4CA8B;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.cta {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  border: 0.1em #D4CA8B solid;
+  display: inline-block;
+  color: #D4CA8B;
+  padding: 0.8em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 1em 0;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
+}
+
+.cta:hover {
+  background-color: #363636;
+  color: #F8F6F6;
+  border: 0.1em #363636 solid;
+}
+
+.section-header {
+  font-size: 2.5em;
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+  margin: auto;
+}
+
+.section-header:after {
+  content: '';
+  width: 2em;
+  height: 0.05em;
+  background-color: #D4CA8B;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 0;
+  padding: 0;
+}
+
+header > div .logo {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding: 1em;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
+  color: #F8F6F6;
+}
+
+header > div .logo i {
+  margin-right: 0.25em;
+}
+
+header > div .nav {
+  display: none;
+}
+
+header > div .bars {
+  display: block;
+  margin-right: 1em;
+  font-size: 2em;
+  color: #D4CA8B;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
+}
+
+header > div .bars:hover {
+  color: #F8F6F6;
+}
+
+.section1 {
+  background-image: url(./images/intro-bg.jpg);
+  background-color: #D4CA8B;
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section1 .overlay {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 7, 90, 0.7)), to(rgba(5, 7, 90, 0)));
+  background-image: linear-gradient(rgba(5, 7, 90, 0.7), rgba(5, 7, 90, 0));
+}
+
+.section1 .container {
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section1 .container div {
+  text-align: center;
+  color: #F8F6F6;
+}
+
+.section1 .container div i {
+  font-size: 6em;
+}
+
+.section1 .container div p {
+  font-size: 1.7em;
+  font-weight: 300;
+}
+
+.section1 .container div .cta {
+  color: #F8F6F6;
+  border: 0.1em #F8F6F6 solid;
+}
+
+.section1 .container div .cta:hover {
+  border: 0.1em #363636 solid;
+}
+
+.section2 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F8F6F6), to(white));
+  background-image: linear-gradient(180deg, #F8F6F6 0%, white 100%);
+}
+
+.section2 .section-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.section2 .sc-right {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 2em;
+}
+
+.section2 .sc-right h2 {
+  font-weight: 300;
+  font-size: 1.8em;
+  margin-top: 0;
+}
+
+.section2 .sc-right i {
+  font-size: 3em;
+  color: #D4CA8B;
+  padding-top: 1em;
+}
+
+.section3 {
+  text-align: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F8F6F6), to(white));
+  background-image: linear-gradient(180deg, #F8F6F6 0%, white 100%);
+}
+
+.section3 .section-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 3em;
+}
+
+.section3 .sc-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em 0;
+}
+
+.section3 .sc-item h3 {
+  font-weight: 300;
+  color: #D4CA8B;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  margin-bottom: 0;
+}
+
+.section3 .sc-item p {
+  text-align: left;
+}
+
+.section3 .icon {
+  width: 6.5em;
+  height: 6.5em;
+  background-color: #D4CA8B;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section3 .icon i {
+  color: #F8F6F6;
+  font-size: 3em;
+}
+
+.section4 {
+  background: url(./images/achievements-bg.jpg) no-repeat center bottom fixed;
+  background-size: cover;
+  background-color: #D4CA8B;
+}
+
+.section4 .overlay {
+  background-color: rgba(73, 161, 214, 0.8);
+}
+
+.section4 .container {
+  min-height: 30vh;
+}
+
+.section4 .section-header {
+  color: #F8F6F6;
+}
+
+.section4 .section-header:after {
+  background-color: #F8F6F6;
+}
+
+.section4 .section-content {
+  color: #F8F6F6;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.section4 .section-content h3 {
+  font-size: 3em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.section4 .section-content p {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.section4 .sc-item {
+  margin: 1.5em;
+}
+
+@media only screen and (min-width: 35em) {
+  h1 {
+    font-size: 4.5em;
+  }
+  .container {
+    padding: 5em 1em;
+  }
+  .section1 .container {
+    min-height: 50vh;
+  }
+  .section3 .sc-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  .section3 p {
+    padding: 0 1em;
+  }
+}
+
+@media only screen and (min-width: 55em) {
+  header > div {
+    max-width: 80em;
+    margin: auto;
+  }
+  header > div .logo {
+    margin-left: 0;
+  }
+  header > div .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  header > div .nav li {
+    list-style-type: none;
+    padding: 0 1em;
+  }
+  header > div .nav a {
+    padding: 1.7em 0;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #D4CA8B;
+    -webkit-transition: ease 0.3s all;
+    transition: ease 0.3s all;
+    border-bottom: thick transparent solid;
+  }
+  header > div .nav a:hover {
+    color: #F8F6F6;
+    border-bottom: thick #D4CA8B solid;
+  }
+  header > div .bars {
+    display: none;
+  }
+  .section2 {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#F8F6F6));
+    background-image: linear-gradient(white, #F8F6F6);
+  }
+  .section2 .sc-right {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    margin-top: 0;
+  }
+  .section3 .sc-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+  .section4 .container {
+    min-height: 20vh;
+  }
+  .section4 .section-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+/*# sourceMappingURL=style.css.map */
