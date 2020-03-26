@@ -1,4 +1,5 @@
-$font-bodytext: 'Noto Sans KR', sans-serif;
+$font-bodytext: 'Roboto', sans-serif;
+$font-headline: 'Cormorant Garamond', serif;
 
 $main-color: #D4CA8B;
 $dark-color: #363636;
@@ -14,10 +15,21 @@ $light-color: #F8F6F6;
     flex-wrap: $wrap;
 }
 
+@mixin font-headline($style) {
+    font-family: $font-headline;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-style: $style;
+    text-transform: uppercase;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: $font-bodytext;
-    font-weight: 300;
+    font-weight: 400;
     color: $dark-color;
 }
 
@@ -25,20 +37,13 @@ body {
     min-height: 50vh;
     max-width: 80em;
     margin: auto;
-    padding: 5em 1em;
+    padding: 0 1em;
 }
 
 h1 {
     font-size: 4em;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.04em;
+    @include font-headline(normal);
     margin: 1rem 0;
-
-    &:after {
-        content: '.';
-        color: $main-color;
-    }
 }
 
 img {
@@ -86,6 +91,60 @@ img {
     }
 }
 
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -70%;
+    background-color: $main-color;
+    background-image: url(./images/img-half-bottle.png);
+    background-position: bottom right;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    width: 70%;
+    height: 100%;
+    margin: 0;
+    padding: 9em 1em;
+    z-index: 80;
+    transition: ease 0.5s all;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $main-color;
+        z-index: -1;
+        opacity: 60%;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 0 1em;
+    }
+
+    a {
+        padding: 1em 0 ;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include font-headline(normal);
+        color: $dark-color;
+        transition: ease 0.3s all;
+        border-bottom: 2px transparent solid;
+
+        &:hover {
+            color: #fff;
+            border-bottom: 2px #fff solid;
+        }
+    }
+}
+
+.show {
+    left: 0;
+}
+
 // Mobile View
 
 header {
@@ -93,44 +152,49 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 6.1em;
     z-index: 90;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(255,255,255,0.9);
+    @include flexy(space-between, nowrap);
+    align-items: center;
 
     & > div {
         @include flexy(space-between, nowrap);
+        flex: 1 0 auto;
         align-items: center;
         min-height: 0;
         padding: 0;
+    }
 
-        .logo {
-            font-size: 1.5em;
-            text-transform: uppercase;
-            padding: 1em;
-            transition: ease 0.3s all;
-            color: $light-color;
+    .logo {
+        padding-left: 1em;
 
-            i {
-                margin-right: 0.25em;
-            }
-        }
-
-        .nav {
-            display: none;
-        }
-
-        .bars {
-            display: block;
-            margin-right: 1em;
-            font-size: 2em;
-            color: $main-color;
-            transition: ease 0.3s all;
-
-            &:hover {
-                color: $light-color;
-            }
-
+        & img {
+            width: 85%;
         }
     }
+
+    .nav {
+        display: none;
+    }
+
+    .bars {
+        display: block;
+        margin-right: 1em;
+        font-size: 1.5em;
+        color: $dark-color;
+        transition: ease 0.3s all;
+        border: thin $main-color solid;
+        padding: 0.25em 0.5em;
+        border-radius: 50%;
+
+        &:hover {
+            color: #fff;
+            background-color: $main-color;
+            border-radius: 0;
+        }
+
+    }    
 }
 
 .section1 {
@@ -295,10 +359,6 @@ header {
         font-size: 4.5em;
     }
 
-    .container {
-        padding: 5em 1em;
-    }
-
     .section1 {
         .container {
             min-height: 50vh;
@@ -323,48 +383,48 @@ header {
 
 // for tablet - inclusive
 
-@media only screen and (min-width : 55em) {
+@media only screen and (min-width : 59em) {
 
     header {
         & > div {
             max-width: 80em;
             margin: auto;
+        }
 
-            .logo {
-                margin-left: 0;
+        .nav {
+            display: flex;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style-type: none;
+                padding: 0 1em;
             }
 
-            .nav {
-                display: flex;
-                margin: 0;
-                padding: 0;
-    
-                li {
-                    list-style-type: none;
-                    padding: 0 1em;
-                }
-    
-                a {
-                    padding: 1.7em 0 ;
-                    display: block;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    font-weight: 400;
+            a {
+                padding: 0.7em 0 ;
+                display: block;
+                text-decoration: none;
+                text-transform: uppercase;
+                @include font-headline(normal);
+                color: $dark-color;
+                transition: ease 0.3s all;
+                border-bottom: 2px transparent solid;
+
+                &:hover {
                     color: $main-color;
-                    transition: ease 0.3s all;
-                    border-bottom: thick transparent solid;
-    
-                    &:hover {
-                        color: $light-color;
-                        border-bottom: thick $main-color solid;
-                    }
+                    border-bottom: 2px $main-color solid;
                 }
-            }
-    
-            .bars {
-                display: none;
             }
         }
+    
+        .bars {
+            display: none;
+        } 
+    }
+
+    .mobile-nav {
+        display: none;
     }
 
     .section2 {

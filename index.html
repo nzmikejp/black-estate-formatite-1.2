@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:600,600i,|Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
     <title>Black Estate Formative 1.2</title>
@@ -12,19 +12,27 @@
 <body>
     <div class="wrap">
         <header>
-            <div class="">
-                <div class="logo"><i class="fa fa-anchor"></i>Neptune</div>
+            <div>
+                <div class="logo"><img src="./images/img-logo.svg" alt=""></div>
                 <ul class="nav">
+                    <li><a href="#">Wine Collection</a></li>
+                    <li><a href="#">Dine</a></li>
+                    <li><a href="#">Stay</a></li>
+                    <li><a href="#">Events</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Pricing</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
                 <div class="bars"><i class="fas fa-bars"></i></div>
             </div>
         </header>
+        <ul class="mobile-nav">
+            <li><a href="#">Wine Collection</a></li>
+            <li><a href="#">Dine</a></li>
+            <li><a href="#">Stay</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
         <div class="section section1">
             <div class="overlay">
                 <div class="container">
@@ -117,5 +125,12 @@
         </div>
         <footer></footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $('.bars').on('click',function(){
+            $('.mobile-nav').toggleClass('show')
+        })
+    </script>
 </body>
 </html>
