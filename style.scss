@@ -5,8 +5,8 @@ $main-color: #D4CA8B;
 $dark-color: #363636;
 $light-color: #F8F6F6;
 
-@mixin bg-gradient() {
-    background-image: linear-gradient(180deg, $light-color 0%, lighten($light-color, 100%) 100%);
+@mixin bg-gradient($bottom) {
+    background-image: linear-gradient(180deg, $light-color 0%, lighten($light-color, 100%) $bottom);
 }
 
 @mixin flexy($align, $wrap) {
@@ -44,6 +44,13 @@ h1 {
     font-size: 4em;
     @include font-headline(normal);
     margin: 1rem 0;
+}
+
+h3 {
+    font-size: 1.3em;
+    @include font-headline(normal);
+    margin: 1rem 0;
+    text-align: center;
 }
 
 img {
@@ -145,6 +152,9 @@ img {
     left: 0;
 }
 
+
+
+
 // Mobile View
 
 header {
@@ -197,184 +207,93 @@ header {
     }    
 }
 
-.section1 {
-    background-image: url(./images/intro-bg.jpg);
-    background-color: $main-color;
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    .overlay {
-        background-image: linear-gradient(rgba(5, 7, 90, 0.7), rgba(5, 7, 90, 0));
-    }
-
+footer {
     .container {
-        min-height: 80vh;
-        @include flexy(center, nowrap);
-        align-items: center;
-
-        & div {
-            text-align: center;
-            color: $light-color;
-
-            i {
-                font-size: 6em;
-            }
-
-            p {
-                font-size: 1.7em;
-                font-weight: 300;
-            }
-
-            .cta {
-                color: $light-color;
-                border: 0.1em $light-color solid;
-
-                &:hover {
-                    border: 0.1em $dark-color solid;
-                }
-            }
-        }
+        min-height: 0;
+        width: 80em;
     }
-}
 
-.section2 {
-    @include bg-gradient();
-
-           
-    .section-content {
-        @include flexy(space-evenly, wrap);
-    } 
-        
-    .sc-right {
-        align-self: center;
-        margin-top: 2em;
-
-        h2 {
-            font-weight: 300;
-            font-size: 1.8em;
-            margin-top: 0;
-        }
-
-        i {
-            font-size: 3em;
-            color: $main-color;
-            padding-top: 1em;
-        }
-    }  
-}
-
-.section3 {
-    text-align: center;
-    @include bg-gradient();
-
-    .section-content {
-        @include flexy(center, wrap);
-        margin-top: 3em;
-    }
-    .sc-item {
-        flex: 0 0 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 1em 0;
-
-        h3 {
-            font-weight: 300;
-            color: $main-color;
-            text-transform: uppercase;
-            font-size: 1.3em;
-            margin-bottom: 0;
-        }
-
-        p {
-            text-align: left;
-        }
-    }
-    
-    .icon {
-        width: 6.5em;
-        height: 6.5em;
-        background-color: $main-color;
-        border-radius: 50%;
+    .footer-top {
+        @include bg-gradient(40%);
         display: flex;
         justify-content: center;
-        align-items: center;
+        padding-top: 4.5em;
+    }
 
-        i {
-            color: $light-color;
-            font-size: 3em;
-         }
+    & img {
+        width: 4.7em;
+        margin: auto;
+    }
+
+    & h3 {
+        display: block;
+        border-bottom: 0.125em $main-color solid;
+        padding-bottom: 1.6em;
+    }
+
+    & ul {
+        padding: 0;
+        margin: 2.6875em 0 5em 0;
+    }
+
+    & li {
+        list-style-type: none;
+    }
+
+    & a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.875em;
+        color: $dark-color;
+        padding: 0.3em;
+        transition: ease 0.3s all;
+        display: inline-block;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+    .footer-bottom {
+        min-height: 5.9em;
+        background-color: $dark-color;
+        color: $light-color;
+        display: flex;
+
+        .container {
+            @include flexy(space-between, wrap);
+            align-items: center;
+        }
+
+        & p {
+           margin: 0;
+           font-size: 0.875em;
+           padding: 0.5em;
+        }
+
+        .social {
+            padding: 0.5em;
+        }
+
+        & i {
+            font-size: 1.3em;
+            color: $main-color;
+            margin-right: 0.8em;
+            transition: ease 0.3s all;
+
+            &:hover {
+                color: $light-color;
+                cursor: pointer;
+            }
+        }
     }
 }
 
-.section4 {
-    background: url(./images/achievements-bg.jpg) no-repeat center bottom fixed;
-    background-size: cover;
-    background-color: $main-color;
 
-    .overlay {
-        background-color: rgba(73, 161, 214, 0.8);
-    }
-
-    .container {
-        min-height: 30vh;
-    }
-
-    .section-header {
-        color: $light-color;
-    
-        &:after {
-            background-color: $light-color;
-        }
-    }
-
-    .section-content {
-        color: $light-color;
-        text-align: center;
-        margin-top: 2em;
-
-        h3 {
-            font-size: 3em;
-            font-weight: 400;
-            margin: 0;
-        }
-
-        p {
-            text-transform: uppercase;
-            margin: 0;
-        }
-    }
-
-    .sc-item {
-        margin: 1.5em;
-    }
-}
 
 // for small tablet - inclusive
 
 @media only screen and (min-width : 35em) {
-
-    h1 {
-        font-size: 4.5em;
-    }
-
-    .section1 {
-        .container {
-            min-height: 50vh;
-        }
-    }
-
-    .section3 {
-        
-        .sc-item {
-            flex: 0 0 50%;
-        }
-
-        p {
-            padding: 0 1em;
-        }  
-    }
 }
     
  
@@ -427,31 +346,12 @@ header {
         display: none;
     }
 
-    .section2 {
-        background-image: linear-gradient(lighten($light-color, 100%), $light-color);
-
-        .sc-right {
-            flex: 0 0 50%;
-            margin-top: 0;
-        }   
-    }
-
-    .section3 {
-        .sc-item {
-            flex: 0 0 25%;
+    .footer-top{
+        & ul {
+            @include flexy(space-evenly, nowrap)
         }
     }
 
-    .section4 {
-
-        .container {
-            min-height: 20vh;
-        }
-
-        .section-content {
-            @include flexy(space-evenly, wrap);
-        }
-    }
 }
 
 
