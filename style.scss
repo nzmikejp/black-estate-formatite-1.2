@@ -34,16 +34,15 @@ body {
 }
 
 .container {
-    min-height: 50vh;
     max-width: 80em;
     margin: auto;
-    padding: 0 1em;
+    padding: 0 0.5em;
 }
 
-h1 {
+h1, h2 {
     font-size: 4em;
     @include font-headline(normal);
-    margin: 1rem 0;
+    line-height: 100%;
 }
 
 h3 {
@@ -79,35 +78,43 @@ img {
 }
 
 .section-header {
-    font-size: 2.5em;
-    position: relative;
-    display: block;
-    text-align: center;
-    padding: 1rem 0;
-    margin: auto;
+    & h1 {
+        font-size: 2.5em;
+        color: $light-color;
+        position: relative;
+        display: block;
+        text-align: center;
+        padding-bottom: 2rem;
+        margin: 0;
 
-    &:after {
-        content: '';
-        width: 2em;
-        height: 0.05em;
-        background-color: $main-color;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%);
+        &:after {
+            content: '';
+            width: 2em;
+            height: 0.05em;
+            background-color: $main-color;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+
+    & h2 {
+        color: $main-color;
+        font-size: 1.625em;
+        text-align: center;
+        font-style: italic;
+        margin: 0;
+        display: block;
+        padding-bottom: 1rem;
     }
 }
 
 .mobile-nav {
     position: fixed;
     top: 0;
-    left: -70%;
-    background-color: $main-color;
-    background-image: url(./images/img-half-bottle.png);
-    background-position: bottom right;
-    background-size: auto 90%;
-    background-repeat: no-repeat;
-    width: 70%;
+    left: -100%;
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 9em 1em;
@@ -121,9 +128,12 @@ img {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: $main-color;
+        background-color: #D4CA8BEB;
+        background-image: url(./images/img-half-bottle.png);
+        background-position: bottom right;
+        background-size: auto 90%;
+        background-repeat: no-repeat;
         z-index: -1;
-        opacity: 60%;
     }
 
     li {
@@ -195,7 +205,7 @@ header {
         color: $dark-color;
         transition: ease 0.3s all;
         border: thin $main-color solid;
-        padding: 0.25em 0.5em;
+        padding: 0.33em 0.5em;
         border-radius: 50%;
 
         &:hover {
@@ -205,6 +215,63 @@ header {
         }
 
     }    
+}
+
+.section-1 {
+    min-height: 48em;
+    background-color: $dark-color;
+    background-image: url(./images/img-hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flexy(flex-end, nowrap);
+    align-items: center;
+
+    .hero-container {
+        @include flexy(flex-start, nowrap);
+        align-items: center;
+        background-color: rgba(54, 54, 54, 0.9);
+        flex: 0 0 100%;
+        clip-path: polygon(3em 0, 100% 0%, 100% 100%, 0% 100%);
+        padding: 2em 0.5em 2em 5em;
+        margin-top: 4em;
+        transition: ease 0.3s all;
+    }
+
+    .hc-left {
+        color: $light-color;
+        flex: 0 0 100%;
+
+        & > div:last-child {
+            @include flexy(space-between, nowrap);
+            align-items: flex-start;
+
+            & img {
+                width: 5.6875em;
+                filter: grayscale(100%);
+                opacity: 0.4;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    .hc-right {
+        display: none;
+    }
+
+    & p {
+        line-height: 150%;
+        margin: 1.5rem;
+    }
+
+    .cta {
+        margin-left: 1.5rem;
+
+        &:hover {
+            background-color: $main-color;
+            color: $dark-color;
+        }
+    }
 }
 
 footer {
@@ -278,7 +345,7 @@ footer {
         & i {
             font-size: 1.3em;
             color: $main-color;
-            margin-right: 0.8em;
+            margin-left: 0.8em;
             transition: ease 0.3s all;
 
             &:hover {
@@ -346,12 +413,22 @@ footer {
         display: none;
     }
 
+    .section-1 {
+        .hero-container {
+            flex: 0 0 80%;
+        }
+
+        .hc-right {
+            display: flex;
+            margin-left: 1em;
+        }    
+    }
+
     .footer-top{
         & ul {
             @include flexy(space-evenly, nowrap)
         }
     }
-
 }
 
 
@@ -359,5 +436,15 @@ footer {
 // for destop - inclusive
 
 @media only screen and (min-width : 75em) {
+
+    .section-1 {
+        .hero-container {
+            flex: 0 0 70%;
+        }
+
+        .hc-left {
+            flex: 0 0 60%;
+        }
+    }
 
 }
