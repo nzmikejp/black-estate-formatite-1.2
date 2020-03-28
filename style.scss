@@ -389,7 +389,7 @@ header {
 }
 
 .section-3 {
-   @include bg-gradient(30%);
+   @include bg-gradient(10%);
    margin-bottom: 5em;
    
    .section-content {
@@ -401,6 +401,7 @@ header {
    .product-gallery {
        @include flexy(center, wrap);
        margin-top: 3em;
+       align-items: stretch;
    }
 
    .pg-item {
@@ -408,7 +409,27 @@ header {
         margin: 0.25em;
         background-image: linear-gradient(180deg, lighten($light-color, 100%) 50%, $light-color 100%);
         background-repeat: no-repeat;
-        flex: 1 0 40%;
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        transition: ease 0.3s all;
+        border-radius: 0 0 3px 3px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            background-color: #fff;
+            border: thin rgba(0,0,0,0.1) solid;
+            border-radius: 50%;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0.5em);
+            transition: ease 0.3s all;
+        }
 
        & > img {
            margin: auto;
@@ -433,6 +454,13 @@ header {
         }
 
         &:hover {
+            background-image: none;
+
+            &:after {
+                background-color: $main-color;
+                border: thin rgba(255,255,255,1) solid;
+            }
+
             & a {
                 color: $main-color;
                 cursor: pointer;
@@ -530,8 +558,10 @@ footer {
 @media only screen and (min-width : 35em) {
 
     .section-3 {
+        @include bg-gradient(20%);
+
         .pg-item {
-            flex: 0 0 30%;
+            flex: 0 0 40%;
         }
     }
 }
@@ -646,8 +676,10 @@ footer {
     }
 
     .section-3 {
+        @include bg-gradient(30%);
+
         .pg-item {
-            flex: 0 0 15%;
+            flex: 0 0 30%;
         }
     }
 
@@ -671,6 +703,12 @@ footer {
 
         .hc-left {
             flex: 0 0 60%;
+        }
+    }
+
+    .section-3 {
+        .pg-item {
+            flex: 0 0 15%;
         }
     }
 
