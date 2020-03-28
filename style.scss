@@ -67,6 +67,12 @@ h4 {
     text-transform: uppercase;
 }
 
+h5 {
+    font-family: $font-headline;
+    font-size: 1.3em;
+    text-align: center;
+}
+
 p {
     line-height: 150%;
 }
@@ -371,22 +377,67 @@ header {
             position: absolute;
             top: 0;
             right: 8%;
+            transition: ease 0.3s all;
         }
 
         & img:last-child {
             padding-top: 20%;
+            transition: ease 0.3s all;
         }
 
     }
 }
 
 .section-3 {
-   @include bg-gradient(100%);
+   @include bg-gradient(30%);
+   margin-bottom: 5em;
    
    .section-content {
        & p {
            margin-top: 2em;
        }
+   }
+
+   .product-gallery {
+       @include flexy(center, wrap);
+       margin-top: 3em;
+   }
+
+   .pg-item {
+        padding: 1em 0.5em;
+        margin: 0.25em;
+        background-image: linear-gradient(180deg, lighten($light-color, 100%) 50%, $light-color 100%);
+        background-repeat: no-repeat;
+        flex: 1 0 40%;
+
+       & > img {
+           margin: auto;
+       }
+
+       & a {
+           text-decoration: none;
+           color: $dark-color;
+           display: block;
+           transition: ease 0.3s all;
+
+           & > :first-child {
+                border-bottom: thin $main-color solid;
+                padding-bottom: 1em;
+            }
+       }
+
+       & h5 {
+            margin: 0;
+            padding-top: 0.5em;
+            display: block;
+        }
+
+        &:hover {
+            & a {
+                color: $main-color;
+                cursor: pointer;
+            }
+        }
    }
 }
 
@@ -477,6 +528,12 @@ footer {
 // for small tablet - inclusive
 
 @media only screen and (min-width : 35em) {
+
+    .section-3 {
+        .pg-item {
+            flex: 0 0 30%;
+        }
+    }
 }
     
  
@@ -585,6 +642,12 @@ footer {
             & img:last-child {
                 padding-top: 10%;
             }
+        }
+    }
+
+    .section-3 {
+        .pg-item {
+            flex: 0 0 15%;
         }
     }
 
