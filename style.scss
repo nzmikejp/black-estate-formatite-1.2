@@ -7,6 +7,7 @@ $light-color: #F8F6F6;
 
 @mixin bg-gradient($bottom) {
     background-image: linear-gradient(180deg, $light-color 0%, lighten($light-color, 100%) $bottom);
+    background-repeat: no-repeat;
 }
 
 @mixin flexy($align, $wrap) {
@@ -43,6 +44,11 @@ body {
     padding-top: 5em;
 }
 
+.section-content {
+    margin: 0 auto;
+    text-align: center;
+}
+
 h1, h2 {
     font-size: 4em;
     @include font-headline(normal);
@@ -54,6 +60,15 @@ h3 {
     @include font-headline(normal);
     margin: 1rem 0;
     text-align: center;
+}
+
+h4 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 150%;
 }
 
 img {
@@ -213,6 +228,9 @@ img {
     display: none;
 }
 
+.l-width-90 {
+    max-width: 90%;
+}
 
 
 
@@ -250,14 +268,17 @@ header {
     }
 
     .bars {
-        display: block;
+        // display: block;
+        width: 2em;
+        height: 2em;
         margin-right: 1em;
         font-size: 1.5em;
         color: $dark-color;
         transition: ease 0.3s all;
         border: thin $main-color solid;
-        padding: 0.33em 0.5em;
         border-radius: 50%;
+        @include flexy(center, nowrap);
+        align-items: center;
 
         &:hover {
             color: #fff;
@@ -285,7 +306,6 @@ header {
         flex: 0 0 100%;
         clip-path: polygon(3em 0, 100% 0%, 100% 100%, 0% 100%);
         padding: 2em 0.5em 2em 5em;
-        margin-top: 4em;
         transition: ease 0.3s all;
     }
 
@@ -326,7 +346,6 @@ header {
     }
 
     & p {
-        line-height: 150%;
         margin: 1.5rem;
     }
 
@@ -342,6 +361,33 @@ header {
 
 .section-2 {
     @include bg-gradient(50%);
+
+    .section-image {
+        @include flexy(center, wrap);
+        position: relative;
+
+        & img:first-child {
+            max-width: 20%;
+            position: absolute;
+            top: 0;
+            right: 8%;
+        }
+
+        & img:last-child {
+            padding-top: 20%;
+        }
+
+    }
+}
+
+.section-3 {
+   @include bg-gradient(100%);
+   
+   .section-content {
+       & p {
+           margin-top: 2em;
+       }
+   }
 }
 
 footer {
@@ -441,6 +487,10 @@ footer {
 
 @media only screen and (min-width : 59em) {
 
+    .l-width-60 {
+        max-width: 60%;
+    } 
+
     header {
         & > div {
             max-width: 80em;
@@ -486,7 +536,7 @@ footer {
     .cart {
         position: fixed;
         right: 0;
-        top: 8em;
+        top: 9.3em;
         background-color: $main-color;
         width: 3.75em;
         height: 6.25em;
@@ -519,7 +569,6 @@ footer {
         }
     }
     
-
     .section-1 {
         .hero-container {
             flex: 0 0 80%;
@@ -529,6 +578,14 @@ footer {
             display: flex;
             margin-left: 1em;
         }    
+    }
+
+    .section-2 {
+        .section-image {    
+            & img:last-child {
+                padding-top: 10%;
+            }
+        }
     }
 
     .footer-top{
