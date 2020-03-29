@@ -484,6 +484,7 @@ header {
         & > div {
             flex: 0 0 80%;
             transition: ease 0.3s all;
+            text-align: center;
         }
     }
 
@@ -513,10 +514,68 @@ header {
     }
 }
 
+.section-5 {
+    min-height: 47em;
+    @include bg-gradient(100%);
+    padding-bottom: 4em;
+
+    .container {
+        padding: 0 1em;
+    }
+
+    .p-left {
+        @include flexy(center, wrap);
+        align-items: center;
+        margin-bottom: 3em;
+        transition: ease 0.3s all;
+
+        & > div {
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -1em;
+                left: 60%;
+                width: 4em;
+                height: 4em;
+                background-color: rgba(255,255,255,0.4);
+                border: 2px $main-color solid;
+                border-radius: 50%;
+                transition: ease 0.3s all;
+            }
+        }
+    }
+
+    .p-right {
+        @include flexy(center, wrap);
+        align-items: center;
+        transition: ease 0.3s all;
+
+        & > div {
+            flex: 0 0 90%;
+            transition: ease 0.3s all;
+            text-align: center;
+        }
+    }
+ 
+    & img {
+        border-radius: 50%;
+        max-width: 50%;
+    }
+
+    & p {
+        margin-top: 2em;
+    }    
+}
+
 footer {
     .container {
         min-height: 0;
         width: 80em;
+        padding: 0 1.2em;
     }
 
     .footer-top {
@@ -764,6 +823,7 @@ footer {
             & > div {
                flex: 0 0 60%;
                margin: 3em;
+               text-align: left;
             }
         }
     
@@ -772,6 +832,44 @@ footer {
             padding-top: 0;
             clip-path: polygon(6em 0, 100% 0%, 100% 100%, 0% 100%);
         }
+    }
+
+    .section-5 { 
+        @include flexy(center, wrap);
+
+        .container {
+            @include flexy(center, wrap)
+        }
+        
+        .p-left {
+            flex: 0 0 30%;
+            @include flexy(flex-start, wrap);
+            margin-right: 3em;
+            margin-bottom: 0;
+
+            & > div {
+                &:after {
+                    left: 70%;
+                    width: 6.5em;
+                    height: 6.5em;
+                }   
+            }
+        }
+    
+        .p-right {
+            flex: 0 0 60%;
+            @include flexy(flex-start, wrap);
+            margin-left: 3em;
+            
+            & > div {
+                flex: 0 0 100%;
+                text-align: left;
+            }
+        }
+     
+        & img {
+            max-width: 100%;
+        } 
     }
 
 }
