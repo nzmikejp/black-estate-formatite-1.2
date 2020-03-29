@@ -68,9 +68,10 @@ h4 {
 }
 
 h5 {
-    font-family: $font-headline;
-    font-size: 1.3em;
+    font-family: $font-bodytext;
+    font-size: 1em;
     text-align: center;
+    font-weight: normal;
 }
 
 p {
@@ -319,12 +320,10 @@ header {
         color: $light-color;
         flex: 0 0 100%;
 
-        .section-header {
-            & h1 {
-                color: $light-color;
-            }
+        & h1 {
+            color: $light-color;
         }
-
+        
         & > div:last-child {
             @include flexy(space-between, nowrap);
             align-items: flex-start;
@@ -384,7 +383,6 @@ header {
             padding-top: 20%;
             transition: ease 0.3s all;
         }
-
     }
 }
 
@@ -409,7 +407,7 @@ header {
         margin: 0.25em;
         background-image: linear-gradient(180deg, lighten($light-color, 100%) 50%, $light-color 100%);
         background-repeat: no-repeat;
-        flex: 0 0 50%;
+        flex: 0 0 70%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -455,6 +453,7 @@ header {
 
         &:hover {
             background-image: none;
+            cursor: pointer;
 
             &:after {
                 background-color: $main-color;
@@ -463,10 +462,55 @@ header {
 
             & a {
                 color: $main-color;
-                cursor: pointer;
             }
         }
    }
+}
+
+.section-4 {
+    min-height: 37em;
+    background-color: $dark-color;
+    color: $light-color;
+    @include flexy(center, wrap);
+    padding-top: 0;
+
+    .p-left {
+        flex: 0 0 100%;
+        @include flexy(center, wrap);
+        align-items: center;
+        padding: 3em 0;
+
+
+        & > div {
+            flex: 0 0 80%;
+            transition: ease 0.3s all;
+        }
+    }
+
+    .p-right {
+        flex: 0 0 100%;
+        background-image: url(./images/img-slice-of-heaven.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: grayscale(50%);
+        padding-top: 40%;
+    }
+ 
+    & h1 {
+        color: $light-color;
+    }
+
+    & p {
+        margin-top: 2em;
+    }
+    
+    .cta {
+        &:hover {
+            background-color: $main-color;
+            color: $dark-color;
+        }
+    }
 }
 
 footer {
@@ -588,29 +632,29 @@ footer {
             display: flex;
             margin: 0;
             padding: 0;
+        }
 
-            li {
-                list-style-type: none;
-                padding: 0 1em;
-            }
+        li {
+            list-style-type: none;
+            padding: 0 1em;
+        }
 
-            a {
-                padding: 0.7em 0 ;
-                display: block;
-                text-decoration: none;
-                text-transform: uppercase;
-                @include font-headline(normal);
-                color: $dark-color;
-                transition: ease 0.3s all;
-                border-bottom: 2px transparent solid;
+        a {
+            padding: 0.7em 0 ;
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            @include font-headline(normal);
+            color: $dark-color;
+            transition: ease 0.3s all;
+            border-bottom: 2px transparent solid;
 
-                &:hover {
-                    color: $main-color;
-                    border-bottom: 2px $main-color solid;
-                }
+            &:hover {
+                color: $main-color;
+                border-bottom: 2px $main-color solid;
             }
         }
-    
+        
         .bars {
             display: none;
         } 
@@ -712,4 +756,23 @@ footer {
         }
     }
 
+    .section-4 {
+        .p-left {
+            flex: 0 0 55%;
+            justify-content: flex-end;
+    
+            & > div {
+               flex: 0 0 60%;
+               margin: 3em;
+            }
+        }
+    
+        .p-right {
+            flex: 0 0 45%;
+            padding-top: 0;
+            clip-path: polygon(6em 0, 100% 0%, 100% 100%, 0% 100%);
+        }
+    }
+
 }
+

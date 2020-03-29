@@ -51,9 +51,10 @@ h4 {
 }
 
 h5 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.3em;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
   text-align: center;
+  font-weight: normal;
 }
 
 p {
@@ -364,7 +365,7 @@ header .bars:hover {
           flex: 0 0 100%;
 }
 
-.section-1 .hc-left .section-header h1 {
+.section-1 .hc-left h1 {
   color: #F8F6F6;
 }
 
@@ -482,8 +483,8 @@ header .bars:hover {
   background-image: linear-gradient(180deg, white 50%, #F8F6F6 100%);
   background-repeat: no-repeat;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -541,6 +542,7 @@ header .bars:hover {
 
 .section-3 .pg-item:hover {
   background-image: none;
+  cursor: pointer;
 }
 
 .section-3 .pg-item:hover:after {
@@ -550,7 +552,73 @@ header .bars:hover {
 
 .section-3 .pg-item:hover a {
   color: #D4CA8B;
-  cursor: pointer;
+}
+
+.section-4 {
+  min-height: 37em;
+  background-color: #363636;
+  color: #F8F6F6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 0;
+}
+
+.section-4 .p-left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3em 0;
+}
+
+.section-4 .p-left > div {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
+}
+
+.section-4 .p-right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  background-image: url(./images/img-slice-of-heaven.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
+  padding-top: 40%;
+}
+
+.section-4 h1 {
+  color: #F8F6F6;
+}
+
+.section-4 p {
+  margin-top: 2em;
+}
+
+.section-4 .cta:hover {
+  background-color: #D4CA8B;
+  color: #363636;
 }
 
 footer .container {
@@ -680,11 +748,11 @@ footer .footer-bottom i:hover {
     margin: 0;
     padding: 0;
   }
-  header .nav li {
+  header li {
     list-style-type: none;
     padding: 0 1em;
   }
-  header .nav a {
+  header a {
     padding: 0.7em 0;
     display: block;
     text-decoration: none;
@@ -699,7 +767,7 @@ footer .footer-bottom i:hover {
     transition: ease 0.3s all;
     border-bottom: 2px transparent solid;
   }
-  header .nav a:hover {
+  header a:hover {
     color: #D4CA8B;
     border-bottom: 2px #D4CA8B solid;
   }
@@ -800,6 +868,28 @@ footer .footer-bottom i:hover {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 15%;
             flex: 0 0 15%;
+  }
+  .section-4 .p-left {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 55%;
+            flex: 0 0 55%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .section-4 .p-left > div {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
+    margin: 3em;
+  }
+  .section-4 .p-right {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45%;
+            flex: 0 0 45%;
+    padding-top: 0;
+    -webkit-clip-path: polygon(6em 0, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(6em 0, 100% 0%, 100% 100%, 0% 100%);
   }
 }
 /*# sourceMappingURL=style.css.map */
