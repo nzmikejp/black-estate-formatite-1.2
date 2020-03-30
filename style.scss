@@ -95,11 +95,27 @@ img {
     text-transform: uppercase;
     margin: 1em 0;
     transition: ease 0.3s all;
+    position: relative;
+
+    &:after {
+        content: url(./images/img-pick-me.svg);
+        position: absolute;
+        top: 0;
+        right: -80px;
+        opacity: 0;
+        transition: ease 0.3s all;
+    }
 
     &:hover {
         background-color: $dark-color;
         color: $light-color;
         border: 0.1em $dark-color solid;
+
+        &:after {
+            position: absolute;
+            top: -25px;
+            opacity: 1;
+        }
     }
 }
 
@@ -116,11 +132,26 @@ img {
     text-transform: uppercase;
     margin: 1em 0;
     transition: ease 0.3s all;
+    position: relative;
+
+    &:after {
+        content: url(./images/img-pick-me.svg);
+        position: absolute;
+        top: 0;
+        right: -80px;
+        opacity: 0;
+        transition: ease 0.3s all;
+    }
 
     &:hover {
         background-color: $main-color;
         color: $dark-color;
         border: 0.1em $main-color solid;
+
+        &:after {
+            top: -25px;
+            opacity: 1;
+        }
     }
 }
 
@@ -248,6 +279,10 @@ img {
 
         &:hover {
             color: $light-color;
+
+            &:after {
+                display: none;
+            }
         }
     }
 
@@ -929,9 +964,9 @@ footer {
             justify-content: flex-end;
     
             & > div {
-               flex: 0 0 60%;
-               margin: 3em;
-               text-align: left;
+                max-width: 40em;
+                margin-right: 3em;
+                text-align: left;
             }
         }
     

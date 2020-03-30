@@ -79,12 +79,29 @@ img {
   margin: 1em 0;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
+  position: relative;
+}
+
+.cta-light:after {
+  content: url(./images/img-pick-me.svg);
+  position: absolute;
+  top: 0;
+  right: -80px;
+  opacity: 0;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
 }
 
 .cta-light:hover {
   background-color: #363636;
   color: #F8F6F6;
   border: 0.1em #363636 solid;
+}
+
+.cta-light:hover:after {
+  position: absolute;
+  top: -25px;
+  opacity: 1;
 }
 
 .cta-dark {
@@ -101,12 +118,28 @@ img {
   margin: 1em 0;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
+  position: relative;
+}
+
+.cta-dark:after {
+  content: url(./images/img-pick-me.svg);
+  position: absolute;
+  top: 0;
+  right: -80px;
+  opacity: 0;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
 }
 
 .cta-dark:hover {
   background-color: #D4CA8B;
   color: #363636;
   border: 0.1em #D4CA8B solid;
+}
+
+.cta-dark:hover:after {
+  top: -25px;
+  opacity: 1;
 }
 
 .section-header h1 {
@@ -241,6 +274,10 @@ img {
 
 .mobile-nav .cta-light:hover {
   color: #F8F6F6;
+}
+
+.mobile-nav .cta-light:hover:after {
+  display: none;
 }
 
 .mobile-nav a {
@@ -1072,10 +1109,8 @@ footer .footer-bottom i:hover {
             justify-content: flex-end;
   }
   .our-land .container-left > div {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 60%;
-            flex: 0 0 60%;
-    margin: 3em;
+    max-width: 40em;
+    margin-right: 3em;
     text-align: left;
   }
   .our-land .container-right {
