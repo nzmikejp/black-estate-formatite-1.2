@@ -1,0 +1,193 @@
+@mixin bg-gradient($bottom) {
+    background-image: linear-gradient(180deg, $light-color 0%, lighten($light-color, 100%) $bottom);
+    background-repeat: no-repeat;
+}
+
+@mixin flexy($align, $wrap) {
+    display: flex;
+    justify-content: $align;
+    flex-wrap: $wrap;
+}
+
+@mixin font-headline($style) {
+    font-family: $font-headline;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-style: $style;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 80em;
+    margin: auto;
+    padding: 0 0.5em;
+}
+
+.section {
+    padding-top: 5em;
+}
+
+.section-content {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-header {
+    & h1 {
+        font-size: 2.5em;
+        color: $dark-color;
+        position: relative;
+        display: block;
+        text-align: center;
+        padding-bottom: 2rem;
+        margin: 0;
+
+        &:after {
+            content: '';
+            width: 2em;
+            height: 0.05em;
+            background-color: $main-color;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+
+    & h2 {
+        color: $main-color;
+        font-size: 1.625em;
+        text-align: center;
+        font-style: italic;
+        margin: 0;
+        display: block;
+        padding-bottom: 1rem;
+    }
+}
+
+.section-divider {
+    &:before {
+        content: '';
+        width: 100%;
+        border-bottom: 1px $main-color solid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(-3.5deg);
+    }
+
+    &:after {
+        content: '';
+        width: 100%;
+        border-bottom: 1px $main-color solid;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: rotate(3.5deg);
+    }
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 9em 1em;
+    z-index: 80;
+    transition: ease 0.5s all;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #D4CA8BEB;
+        background-image: url(./images/img-half-bottle.png);
+        background-position: bottom right;
+        background-size: auto 90%;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 0 1em;
+
+        &:last-child {
+            margin-top: 2em;
+        }
+    }
+
+    .search-group {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255,255,255,0.1);
+        padding: 1em;
+
+        & input[type="search"] {
+            background-color: transparent;
+            border-bottom: 2px $light-color solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            line-height: 150%;
+            flex: 1 0 auto;
+            margin-left: 1rem;
+            font-size: 1.2em;
+            padding: 0.5rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        & i {
+            font-size: 1.2em;
+        }
+    }
+
+    .cta-light {
+        color: $dark-color;
+        border-color: $dark-color;
+
+        &:hover {
+            color: $light-color;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    a {
+        padding: 1em 0 ;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include font-headline(normal);
+        color: $dark-color;
+        transition: ease 0.3s all;
+        border-bottom: 2px transparent solid;
+
+        &:hover {
+            color: #fff;
+            border-bottom: 2px #fff solid;
+        }
+    }
+}
+
+.show {
+    left: 0;
+}
+
+.cart {
+    display: none;
+}
+
+.l-width-90 {
+    max-width: 90%;
+}

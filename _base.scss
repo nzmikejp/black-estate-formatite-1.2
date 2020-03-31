@@ -1,0 +1,49 @@
+$font-bodytext: 'Roboto', sans-serif;
+$font-headline: 'Cormorant Garamond', serif;
+
+$main-color: #D4CA8B;
+$dark-color: #363636;
+$light-color: #F8F6F6;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-bodytext;
+    font-weight: 400;
+    color: $dark-color;
+}
+
+h1, h2 {
+    font-size: 4em;
+    @include font-headline(normal);
+    line-height: 100%;
+}
+
+h3 {
+    font-size: 1.3em;
+    @include font-headline(normal);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+h4 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 1em;
+    text-align: center;
+    font-weight: normal;
+}
+
+p {
+    line-height: 150%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

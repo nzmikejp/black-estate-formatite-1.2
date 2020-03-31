@@ -1,0 +1,94 @@
+.cta-light {
+    font-family: $font-bodytext;
+    font-size: 1em;
+    font-weight: 400;
+    border: 0.1em $main-color solid;
+    display: inline-block;
+    color: $main-color;
+    background-color: transparent;
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 1em 0;
+    transition: ease 0.3s all;
+    position: relative;
+
+    &:after {
+        content: url(./images/img-pick-me.svg);
+        position: absolute;
+        top: 0;
+        right: -80px;
+        opacity: 0;
+        transition: ease 0.3s all;
+    }
+
+    &:hover {
+        background-color: $dark-color;
+        color: $light-color;
+        border: 0.1em $dark-color solid;
+
+        &:after {
+            position: absolute;
+            top: -25px;
+            opacity: 1;
+        }
+    }
+}
+
+.cta-dark {
+    font-family: $font-bodytext;
+    font-size: 1em;
+    font-weight: 400;
+    border: 0.1em $main-color solid;
+    display: inline-block;
+    color: $main-color;
+    background-color: transparent;
+    padding: 0.7em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 1em 0;
+    transition: ease 0.3s all;
+    position: relative;
+
+    &:after {
+        content: url(./images/img-pick-me.svg);
+        position: absolute;
+        top: 0;
+        right: -80px;
+        opacity: 0;
+        transition: ease 0.3s all;
+    }
+
+    &:hover {
+        background-color: $main-color;
+        color: $dark-color;
+        border: 0.1em $main-color solid;
+
+        &:after {
+            top: -25px;
+            opacity: 1;
+        }
+    }
+}
+
+form {
+    .form-group {
+    
+        & input[type="text"] {
+            border-bottom: 2px $main-color solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            padding: 0.8em;
+            margin-top: 1em;
+            line-height: 150%;
+            background-color: transparent;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+                background-color: rgba(255,255,255,0.1);
+            }
+        }
+    }
+}
