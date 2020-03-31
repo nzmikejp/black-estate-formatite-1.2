@@ -172,7 +172,7 @@ header {
         justify-content: space-between;
         position: relative;
         transition: ease 0.3s all;
-        border-radius: 0 0 3px 3px;
+        border-radius: 0 0 0.1875em 0.1875em;
 
         &:after {
             content: '';
@@ -295,7 +295,7 @@ header {
                 width: 4em;
                 height: 4em;
                 background-color: rgba(255,255,255,0.4);
-                border: 2px $main-color solid;
+                border: 0.125em $main-color solid;
                 border-radius: 50%;
                 transition: ease 0.3s all;
             }
@@ -501,11 +501,11 @@ footer {
             @include font-headline(normal);
             color: $dark-color;
             transition: ease 0.3s all;
-            border-bottom: 2px transparent solid;
+            border-bottom: 0.125em transparent solid;
 
             &:hover {
                 color: $main-color;
-                border-bottom: 2px $main-color solid;
+                border-bottom: 0.125em $main-color solid;
             }
         }
         

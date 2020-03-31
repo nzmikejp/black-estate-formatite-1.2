@@ -100,7 +100,7 @@ img {
 .section-divider:before {
   content: '';
   width: 100%;
-  border-bottom: 1px #D4CA8B solid;
+  border-bottom: 0.0625em #D4CA8B solid;
   position: absolute;
   top: 0;
   left: 0;
@@ -111,7 +111,7 @@ img {
 .section-divider:after {
   content: '';
   width: 100%;
-  border-bottom: 1px #D4CA8B solid;
+  border-bottom: 0.0625em #D4CA8B solid;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -169,7 +169,7 @@ img {
 
 .mobile-nav .search-group input[type="search"] {
   background-color: transparent;
-  border-bottom: 2px #F8F6F6 solid;
+  border-bottom: 0.125em #F8F6F6 solid;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -216,12 +216,12 @@ img {
   color: #363636;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
-  border-bottom: 2px transparent solid;
+  border-bottom: 0.125em transparent solid;
 }
 
 .mobile-nav a:hover {
   color: #fff;
-  border-bottom: 2px #fff solid;
+  border-bottom: 0.125em #fff solid;
 }
 
 .show {
@@ -257,7 +257,7 @@ img {
   content: url(./images/img-pick-me.svg);
   position: absolute;
   top: 0;
-  right: -80px;
+  right: -5em;
   opacity: 0;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
@@ -271,7 +271,7 @@ img {
 
 .cta-light:hover:after {
   position: absolute;
-  top: -25px;
+  top: -1.5625em;
   opacity: 1;
 }
 
@@ -296,7 +296,7 @@ img {
   content: url(./images/img-pick-me.svg);
   position: absolute;
   top: 0;
-  right: -80px;
+  right: -5em;
   opacity: 0;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
@@ -309,12 +309,12 @@ img {
 }
 
 .cta-dark:hover:after {
-  top: -25px;
+  top: -1.5625em;
   opacity: 1;
 }
 
 form .form-group input[type="text"] {
-  border-bottom: 2px #D4CA8B solid;
+  border-bottom: 0.125em #D4CA8B solid;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -591,7 +591,7 @@ header .bars:hover {
   position: relative;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 0.1875em 0.1875em;
 }
 
 .products .pg-item:after {
@@ -758,7 +758,7 @@ header .bars:hover {
   width: 4em;
   height: 4em;
   background-color: rgba(255, 255, 255, 0.4);
-  border: 2px #D4CA8B solid;
+  border: 0.125em #D4CA8B solid;
   border-radius: 50%;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
@@ -989,11 +989,11 @@ footer .footer-bottom i:hover {
     color: #363636;
     -webkit-transition: ease 0.3s all;
     transition: ease 0.3s all;
-    border-bottom: 2px transparent solid;
+    border-bottom: 0.125em transparent solid;
   }
   header a:hover {
     color: #D4CA8B;
-    border-bottom: 2px #D4CA8B solid;
+    border-bottom: 0.125em #D4CA8B solid;
   }
   header .bars {
     display: none;
